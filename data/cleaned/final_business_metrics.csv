@@ -1,0 +1,18 @@
+Metric,Value
+Total Customers,5630.0
+Churned Customers,948.0
+Retained Customers,4682.0
+Overall Churn Rate %,16.838365896980463
+Total Customer Value Proxy,997765.6599999999
+Value Associated with Churned Customers,152031.64
+Value at Risk %,15.237209105793442
+Value Currently at Risk,25837.94
+5% Churn Reduction Value,7601.582000000001
+10% Churn Reduction Value,15203.164000000002
+Top 20% Value Contribution %,29.35332330439194
+High-Value Churned Customers,100.0
+High-Value Churned Customer Value,24566.479999999996
+New Cohort Churn Rate %,41.85897435897436
+Complainer Churn Rate %,31.67082294264339
+Non-Complainer Churn Rate %,10.92896174863388
+Mid-Tenure Churn Rate %,9.19963201471941
