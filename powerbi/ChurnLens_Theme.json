@@ -1,0 +1,43 @@
+{
+  "name": "ChurnLens Customer Retention Intelligence",
+
+  "dataColors": [
+    "#00D4FF",
+    "#2ECC71",
+    "#E74C3C",
+    "#F39C12",
+    "#3498DB",
+    "#A0AEC0"
+  ],
+
+  "background": "#0F1B2D",
+  "foreground": "#FFFFFF",
+  "tableAccent": "#00D4FF",
+
+  "good": "#2ECC71",
+  "neutral": "#3498DB",
+  "bad": "#E74C3C",
+
+  "textClasses": {
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 28,
+      "color": "#FFFFFF"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 14,
+      "color": "#FFFFFF"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#FFFFFF"
+    },
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#A0AEC0"
+    }
+  }
+}
