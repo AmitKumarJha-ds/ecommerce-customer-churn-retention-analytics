@@ -157,7 +157,41 @@ WHERE CashbackAmount < 0
    OR HourSpendOnApp < 0;
 
 -- ============================================================
--- 4. FIX NULL VALUES USING MEDIAN
+-- 4. STANDARDIZE CATEGORICAL VALUES
+-- ============================================================
+-- Business purpose:
+-- Standardize inconsistent category/payment labels
+-- before downstream analysis and dashboarding.
+
+-- Standardize payment mode labels
+UPDATE ecommerce_churn
+SET PreferredPaymentMode = 'Cash on Delivery'
+WHERE PreferredPaymentMode IN ('COD', 's');
+
+-- Standardize order category labels
+UPDATE ecommerce_churn
+SET PreferedOrderCat = 'Mobile'
+WHERE PreferedOrderCat = 'Mobile Phones';
+
+-- Verify standardized payment modes
+SELECT
+    PreferredPaymentMode,
+    COUNT(*) AS customer_count
+FROM ecommerce_churn
+GROUP BY PreferredPaymentMode
+ORDER BY customer_count DESC;
+
+-- Verify standardized order categories
+SELECT
+    PreferedOrderCat,
+    COUNT(*) AS customer_count
+FROM ecommerce_churn
+GROUP BY PreferedOrderCat
+ORDER BY customer_count DESC;
+
+
+-- ============================================================
+-- 5. FIX NULL VALUES USING MEDIAN
 -- ============================================================
 -- Business purpose:
 -- Replace NULL numerical values with the median of each column.
@@ -322,7 +356,7 @@ SET e.DaySinceLastOrder = m.median_value
 WHERE e.DaySinceLastOrder IS NULL;
 
 -- ============================================================
--- 5. POST-CLEANING VERIFICATION
+-- 6. POST-CLEANING VERIFICATION
 -- ============================================================
 -- Business question:
 -- Did the NULL treatment remove the expected missing values?
